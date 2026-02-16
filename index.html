@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎂 Happy Birthday Sarthak! 🎉 - From Team SKY</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Poppins:wght@400;600;800&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #FF6B6B;
+            --secondary: #4ECDC4;
+            --accent: #FFE66D;
+            --purple: #A855F7;
+            --pink: #EC4899;
+            --blue: #3B82F6;
+            --orange: #F97316;
+            --dark: #1a1a2e;
+            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --gradient-4: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--dark);
+            overflow-x: hidden;
+            cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><text y="24" font-size="24">🎈</text></svg>'), auto;
+        }
+
+        /* Confetti Canvas */
+        #confetti-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: var(--gradient-1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="50" font-size="30">🎈🎁🎂🌟⭐🎉</text></svg>');
+            animation: floatBg 20s linear infinite;
+            opacity: 0.3;
+        }
+
+        @keyframes floatBg {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 10;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-family: 'Bangers', cursive;
+            font-size: clamp(3rem, 10vw, 8rem);
+            color: white;
+            text-shadow: 4px 4px 0 var(--pink), 8px 8px 0 var(--purple);
+            letter-spacing: 5px;
+            animation: bounce 0.6s ease infinite alternate;
+        }
+
+        @keyframes bounce {
+            to { transform: translateY(-20px); }
+        }
+
+        .hero .subtitle {
+            font-family: 'Dancing Script', cursive;
+            font-size: clamp(2rem, 5vw, 4rem);
+            color: var(--accent);
+            margin-top: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero .team-badge {
+            margin-top: 30px;
+            padding: 15px 40px;
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 50px;
+            border: 2px solid rgba(255,255,255,0.3);
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            animation: scrollBounce 1.5s ease infinite;
+        }
+
+        @keyframes scrollBounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(15px); }
+        }
+
+        .scroll-indicator span {
+            font-size: 3rem;
+        }
+
+        /* Floating Elements */
+        .floating-emojis {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 5;
+        }
+
+        .floating-emoji {
+            position: absolute;
+            font-size: 2rem;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-30px) rotate(180deg); }
+        }
+
+        /* Section Styles */
+        section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 50px 20px;
+            position: relative;
+        }
+
+        /* Birthday Message Section */
+        .message-section {
+            background: var(--gradient-2);
+            clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
+            padding: 100px 20px;
+        }
+
+        .message-card {
+            max-width: 800px;
+            background: rgba(255,255,255,0.95);
+            border-radius: 30px;
+            padding: 50px;
+            box-shadow: 0 25px 80px rgba(0,0,0,0.3);
+            transform: perspective(1000px) rotateX(5deg);
+            transition: transform 0.5s ease;
+        }
+
+        .message-card:hover {
+            transform: perspective(1000px) rotateX(0deg) scale(1.02);
+        }
+
+        .message-card h2 {
+            font-family: 'Bangers', cursive;
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .message-card p {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            color: #333;
+            text-align: center;
+        }
+
+        .message-card .signature {
+            margin-top: 30px;
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+            color: var(--purple);
+            text-align: right;
+        }
+
+        /* Fun Facts Section */
+        .facts-section {
+            background: var(--gradient-3);
+            clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 95%);
+        }
+
+        .facts-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            padding: 20px;
+        }
+
+        .fact-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+        }
+
+        .fact-card:hover {
+            transform: translateY(-15px) rotate(3deg);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.3);
+        }
+
+        .fact-card:nth-child(even):hover {
+            transform: translateY(-15px) rotate(-3deg);
+        }
+
+        .fact-card .emoji {
+            font-size: 4rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .fact-card h3 {
+            color: var(--purple);
+            margin-bottom: 10px;
+            font-size: 1.4rem;
+        }
+
+        .fact-card p {
+            color: #666;
+            font-size: 1rem;
+        }
+
+        /* Wishes Section */
+        .wishes-section {
+            background: var(--gradient-4);
+            clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 100%);
+        }
+
+        .wishes-section h2 {
+            font-family: 'Bangers', cursive;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            color: white;
+            text-shadow: 3px 3px 0 var(--orange);
+            margin-bottom: 50px;
+        }
+
+        .wishes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+        }
+
+        .wish-card {
+            background: rgba(255,255,255,0.95);
+            border-radius: 20px;
+            padding: 40px 30px;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .wish-card::before {
+            content: '"';
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-size: 6rem;
+            color: rgba(168, 85, 247, 0.2);
+            font-family: serif;
+        }
+
+        .wish-card:hover {
+            transform: scale(1.05);
+        }
+
+        .wish-card p {
+            font-size: 1.2rem;
+            color: #333;
+            position: relative;
+            z-index: 2;
+            line-height: 1.6;
+        }
+
+        .wish-card .from {
+            margin-top: 20px;
+            font-weight: 800;
+            color: var(--purple);
+            font-size: 1.3rem;
+        }
+
+        /* Cake Section */
+        .cake-section {
+            background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
+            position: relative;
+        }
+
+        .cake-container {
+            text-align: center;
+        }
+
+        .cake {
+            font-size: 15rem;
+            animation: cakeFloat 3s ease-in-out infinite;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            filter: drop-shadow(0 20px 40px rgba(0,0,0,0.5));
+        }
+
+        .cake:hover {
+            transform: scale(1.2);
+        }
+
+        @keyframes cakeFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .cake-text {
+            color: white;
+            font-family: 'Bangers', cursive;
+            font-size: 2rem;
+            margin-top: 20px;
+            opacity: 0.8;
+        }
+
+        .candles {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: -50px;
+        }
+
+        .candle {
+            font-size: 3rem;
+            animation: flicker 0.5s ease-in-out infinite alternate;
+        }
+
+        @keyframes flicker {
+            0% { opacity: 1; transform: scale(1); }
+            100% { opacity: 0.7; transform: scale(1.1); }
+        }
+
+        /* Final Section */
+        .final-section {
+            background: var(--gradient-1);
+            text-align: center;
+        }
+
+        .final-section h2 {
+            font-family: 'Bangers', cursive;
+            font-size: clamp(2rem, 8vw, 5rem);
+            color: white;
+            text-shadow: 4px 4px 0 var(--pink);
+            margin-bottom: 30px;
+        }
+
+        .final-section .team-logo {
+            font-size: 8rem;
+            margin-bottom: 30px;
+            animation: pulse 1s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .party-button {
+            padding: 20px 60px;
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: white;
+            color: var(--purple);
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .party-button:hover {
+            transform: scale(1.1);
+            background: var(--accent);
+        }
+
+        /* Progress Bar */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 5px;
+            background: var(--gradient-4);
+            z-index: 9999;
+            transition: width 0.1s ease;
+        }
+
+        /* Scroll Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(100px);
+            transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Sparkle Effect */
+        .sparkle {
+            position: fixed;
+            pointer-events: none;
+            width: 20px;
+            height: 20px;
+            animation: sparkleAnim 0.6s ease-out forwards;
+            z-index: 9999;
+        }
+
+        @keyframes sparkleAnim {
+            0% { transform: scale(0) rotate(0deg); opacity: 1; }
+            100% { transform: scale(1) rotate(180deg); opacity: 0; }
+        }
+
+        /* Music Toggle */
+        .music-toggle {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--gradient-2);
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 1001;
+            box-shadow: 0 5px 30px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .music-toggle:hover {
+            transform: scale(1.1);
+        }
+
+        /* Rainbow Text */
+        .rainbow-text {
+            background: linear-gradient(90deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #8f00ff);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: rainbow 3s ease infinite;
+        }
+
+        @keyframes rainbow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Evolution Timeline Section */
+        .evolution-section {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            position: relative;
+            padding: 100px 20px;
+            overflow: hidden;
+        }
+
+        .evolution-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="50" font-size="20" opacity="0.1">⭐</text></svg>');
+            animation: twinkle 5s linear infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.7; }
+        }
+
+        .evolution-section h2 {
+            font-family: 'Bangers', cursive;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            color: white;
+            text-shadow: 3px 3px 0 var(--purple);
+            margin-bottom: 60px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+            z-index: 2;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 6px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--pink), var(--purple), var(--blue), var(--secondary));
+            border-radius: 3px;
+            box-shadow: 0 0 20px rgba(168, 85, 247, 0.5);
+        }
+
+        .timeline-item {
+            display: flex;
+            justify-content: flex-end;
+            padding: 20px 40px;
+            position: relative;
+            width: 50%;
+        }
+
+        .timeline-item:nth-child(odd) {
+            align-self: flex-end;
+            justify-content: flex-start;
+            margin-left: 50%;
+        }
+
+        .timeline-item:nth-child(even) {
+            margin-right: 50%;
+            text-align: right;
+        }
+
+        .timeline-content {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 30px;
+            position: relative;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+            max-width: 400px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .timeline-content:hover {
+            transform: scale(1.05) rotate(2deg);
+            box-shadow: 0 25px 60px rgba(168, 85, 247, 0.4);
+        }
+
+        .timeline-item:nth-child(even) .timeline-content:hover {
+            transform: scale(1.05) rotate(-2deg);
+        }
+
+        .timeline-icon {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-2);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            border: 4px solid white;
+            z-index: 10;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-icon {
+            left: -70px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-icon {
+            right: -70px;
+        }
+
+        .timeline-year {
+            font-family: 'Bangers', cursive;
+            font-size: 1.5rem;
+            color: var(--purple);
+            margin-bottom: 10px;
+        }
+
+        .timeline-title {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 8px;
+        }
+
+        .timeline-desc {
+            color: #666;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .legend-badge {
+            display: inline-block;
+            background: var(--gradient-4);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 800;
+            margin-top: 10px;
+            animation: glow 2s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 10px rgba(250, 112, 154, 0.5); }
+            50% { box-shadow: 0 0 25px rgba(250, 112, 154, 0.8); }
+        }
+
+        /* Legend floating text */
+        .legend-float {
+            position: fixed;
+            font-family: 'Bangers', cursive;
+            font-size: 1.5rem;
+            color: var(--accent);
+            opacity: 0.6;
+            pointer-events: none;
+            z-index: 4;
+            animation: legendFloat 8s ease-in-out infinite;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        @keyframes legendFloat {
+            0%, 100% { transform: translateY(0) rotate(-5deg); opacity: 0.4; }
+            50% { transform: translateY(-20px) rotate(5deg); opacity: 0.8; }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { letter-spacing: 2px; }
+            .message-card { padding: 30px 20px; margin: 20px; }
+            .cake { font-size: 8rem; }
+            
+            .timeline::before {
+                left: 20px;
+            }
+            
+            .timeline-item,
+            .timeline-item:nth-child(odd),
+            .timeline-item:nth-child(even) {
+                width: 100%;
+                margin-left: 0;
+                margin-right: 0;
+                padding-left: 60px;
+                text-align: left;
+                justify-content: flex-start;
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-icon,
+            .timeline-item:nth-child(even) .timeline-icon {
+                left: -10px;
+                right: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-bar" id="progressBar"></div>
+    <canvas id="confetti-canvas"></canvas>
+    
+    <div class="floating-emojis" id="floatingEmojis"></div>
+
+    <!-- Floating Legend Text -->
+    <div class="legend-float" style="top: 20%; left: 5%;">LEGEND 👑</div>
+    <div class="legend-float" style="top: 40%; right: 8%; animation-delay: 2s;">THE GOAT 🐐</div>
+    <div class="legend-float" style="top: 60%; left: 3%; animation-delay: 4s;">ICON ⭐</div>
+    <div class="legend-float" style="top: 80%; right: 5%; animation-delay: 6s;">LEGENDARY 🔥</div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>🎂 HAPPY BIRTHDAY 🎂</h1>
+            <p class="subtitle">SARTHAK THE LEGEND!</p>
+            <div class="team-badge">🚀 From Team SKY with ❤️ | 👑 The One & Only</div>
+        </div>
+        <div class="scroll-indicator">
+            <span>👇</span>
+        </div>
+    </section>
+
+    <!-- Message Section -->
+    <section class="message-section">
+        <div class="message-card reveal">
+            <h2>🎉 Hey Legend! 🎉</h2>
+            <p>
+                Today is YOUR day, LEGEND! 🌟👑<br><br>
+                You're not just a teammate, you're family! You're the absolute GOAT! 🐐
+                Your energy, your ideas, and your crazy sense of humor make Team SKY 
+                the best team ever! We couldn't imagine this journey without you! 🚀<br><br>
+                Here's to more bugs fixed together, more late-night coding sessions, 
+                more chai breaks, and more LEGENDARY wins! 💪🔥<br><br>
+                <strong style="color: var(--purple);">Once a Legend, Always a Legend! 👑</strong>
+            </p>
+            <p class="signature">- Your Bros, Yash & Krushna 💜</p>
+        </div>
+    </section>
+
+    <!-- Fun Facts Section -->
+    <section class="facts-section">
+        <h2 style="font-family: 'Bangers', cursive; font-size: 3rem; color: white; text-shadow: 3px 3px 0 #3B82F6; margin-bottom: 40px;">Why Sarthak is LEGENDARY! 🏆👑</h2>
+        <div class="facts-container">
+            <div class="fact-card reveal">
+                <span class="emoji">💻</span>
+                <h3>Code Wizard 🧙‍♂️</h3>
+                <p>Turns coffee into code faster than anyone! A TRUE LEGEND of the keyboard!</p>
+            </div>
+            <div class="fact-card reveal">
+                <span class="emoji">🧠</span>
+                <h3>Big Brain LEGEND</h3>
+                <p>Always comes up with LEGENDARY solutions when we're stuck!</p>
+            </div>
+            <div class="fact-card reveal">
+                <span class="emoji">😂</span>
+                <h3>Comedy GOAT 🐐</h3>
+                <p>The one who keeps the team laughing 24/7! Humor Level: LEGENDARY!</p>
+            </div>
+            <div class="fact-card reveal">
+                <span class="emoji">🤝</span>
+                <h3>Team Legend</h3>
+                <p>Always there when someone needs help! That's what LEGENDS do!</p>
+            </div>
+            <div class="fact-card reveal">
+                <span class="emoji">⚡</span>
+                <h3>Energy ICON</h3>
+                <p>Brings positive vibes like a TRUE LEGEND to every meeting!</p>
+            </div>
+            <div class="fact-card reveal">
+                <span class="emoji">🎯</span>
+                <h3>Goal Crusher 👑</h3>
+                <p>Sets targets and SMASHES them like the LEGEND he is!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Evolution Section -->
+    <section class="evolution-section">
+        <h2 class="reveal">🚀 The Evolution of a LEGEND 👑</h2>
+        <div class="timeline">
+            <div class="timeline-item reveal">
+                <div class="timeline-content">
+                    <div class="timeline-icon">👶</div>
+                    <div class="timeline-year">Childhood Era</div>
+                    <div class="timeline-title">The Beginning of Greatness</div>
+                    <div class="timeline-desc">A curious little genius was born! Even as a kid, Sarthak had that spark - the one that said "I'm going to do something EPIC!" 🌟</div>
+                    <span class="legend-badge">BABY LEGEND 👶</span>
+                </div>
+            </div>
+            
+            <div class="timeline-item reveal">
+                <div class="timeline-content">
+                    <div class="timeline-icon">📚</div>
+                    <div class="timeline-year">School Days</div>
+                    <div class="timeline-title">The Knowledge Hunter</div>
+                    <div class="timeline-desc">While others played, our legend was mastering skills! Teachers knew - this kid was different. Already showing signs of the GOAT! 🐐</div>
+                    <span class="legend-badge">RISING STAR ⭐</span>
+                </div>
+            </div>
+            
+            <div class="timeline-item reveal">
+                <div class="timeline-content">
+                    <div class="timeline-icon">🎓</div>
+                    <div class="timeline-year">College Era</div>
+                    <div class="timeline-title">The Skill Builder</div>
+                    <div class="timeline-desc">Leveling up HARD! Coding, learning, growing - Sarthak was on a mission to become the best version of himself! 💻🔥</div>
+                    <span class="legend-badge">CODE WARRIOR 💻</span>
+                </div>
+            </div>
+            
+            <div class="timeline-item reveal">
+                <div class="timeline-content">
+                    <div class="timeline-icon">🤝</div>
+                    <div class="timeline-year">Team SKY Era</div>
+                    <div class="timeline-title">The Legend Joins Forces</div>
+                    <div class="timeline-desc">And then it happened - Sarthak joined Team SKY! The trio was complete. Yash, Sarthak & Krushna - UNSTOPPABLE! 🚀</div>
+                    <span class="legend-badge">TEAM LEGEND 🌟</span>
+                </div>
+            </div>
+            
+            <div class="timeline-item reveal">
+                <div class="timeline-content">
+                    <div class="timeline-icon">👑</div>
+                    <div class="timeline-year">NOW</div>
+                    <div class="timeline-title">THE ABSOLUTE LEGEND</div>
+                    <div class="timeline-desc">Today, Sarthak stands as a complete package - brilliant coder, amazing friend, and the heartbeat of Team SKY! 💜 THE LEGEND IS COMPLETE! 🏆</div>
+                    <span class="legend-badge">LEGENDARY STATUS 👑</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wishes Section -->
+    <section class="wishes-section">
+        <h2 class="reveal">Birthday Wishes for the LEGEND 🎁👑</h2>
+        <div class="wishes-grid">
+            <div class="wish-card reveal">
+                <p>Bhai, you're absolutely insane (in the best way)! Keep being the LEGENDARY person you are. This year is going to be YOUR year! Let's conquer everything together like the LEGENDS we are! 🔥👑</p>
+                <p class="from">- Yash 🎮</p>
+            </div>
+            <div class="wish-card reveal">
+                <p>Happy Birthday LEGEND! 🎂👑 Working with you has been the best experience. Your dedication makes you a true ICON! May all your dreams come true this year! The world isn't ready for what's coming! 🚀</p>
+                <p class="from">- Krushna 💫</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cake Section -->
+    <section class="cake-section">
+        <div class="cake-container reveal">
+            <div class="candles">
+                <span class="candle">🕯️</span>
+                <span class="candle">🕯️</span>
+                <span class="candle">🕯️</span>
+                <span class="candle">🕯️</span>
+                <span class="candle">🕯️</span>
+            </div>
+            <div class="cake" onclick="blowCandles()">🎂</div>
+            <p class="cake-text">👆 Click the cake to blow the candles!</p>
+        </div>
+    </section>
+
+    <!-- Final Section -->
+    <section class="final-section">
+        <div class="team-logo">👑</div>
+        <h2 class="rainbow-text reveal">TEAM SKY FOREVER!</h2>
+        <p style="color: white; font-size: 1.8rem; margin-bottom: 15px; opacity: 0.9;">Yash • <span style="font-size: 2.2rem; text-shadow: 0 0 20px gold;">SARTHAK THE LEGEND</span> • Krushna</p>
+        <p style="color: var(--accent); font-size: 1.3rem; margin-bottom: 30px;">🏆 Once a Legend, Always a Legend! 🏆</p>
+        <button class="party-button" onclick="triggerMegaParty()">🎊 PARTY MODE FOR THE LEGEND! 🎊</button>
+    </section>
+
+    <button class="music-toggle" onclick="toggleMusic()">🎵</button>
+
+    <!-- Birthday Music - Auto plays on first interaction -->
+    <audio id="bgMusic" loop preload="auto">
+        <source src="https://assets.mixkit.co/music/preview/mixkit-a-very-happy-christmas-897.mp3" type="audio/mpeg">
+    </audio>
+    
+    <!-- Click anywhere prompt -->
+    <div id="musicPrompt" style="position: fixed; bottom: 100px; right: 20px; background: var(--gradient-2); color: white; padding: 15px 25px; border-radius: 50px; font-weight: 600; z-index: 1002; animation: bounce 0.6s ease infinite alternate; cursor: pointer; box-shadow: 0 5px 30px rgba(0,0,0,0.3);" onclick="startMusic()">
+        🎵 Click to Start Music! 🎶
+    </div>
+
+    <script>
+        // Confetti System
+        const canvas = document.getElementById('confetti-canvas');
+        const ctx = canvas.getContext('2d');
+        let confetti = [];
+        let animationId;
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        class Confetti {
+            constructor() {
+                this.reset();
+            }
+
+            reset() {
+                this.x = Math.random() * canvas.width;
+                this.y = -20;
+                this.size = Math.random() * 15 + 5;
+                this.speedY = Math.random() * 3 + 2;
+                this.speedX = Math.random() * 4 - 2;
+                this.rotation = Math.random() * 360;
+                this.rotationSpeed = Math.random() * 10 - 5;
+                this.color = ['#FF6B6B', '#4ECDC4', '#FFE66D', '#A855F7', '#EC4899', '#3B82F6', '#F97316'][Math.floor(Math.random() * 7)];
+                this.shape = Math.floor(Math.random() * 3);
+            }
+
+            update() {
+                this.y += this.speedY;
+                this.x += this.speedX;
+                this.rotation += this.rotationSpeed;
+                if (this.y > canvas.height + 20) {
+                    this.reset();
+                }
+            }
+
+            draw() {
+                ctx.save();
+                ctx.translate(this.x, this.y);
+                ctx.rotate(this.rotation * Math.PI / 180);
+                ctx.fillStyle = this.color;
+                
+                if (this.shape === 0) {
+                    ctx.fillRect(-this.size / 2, -this.size / 2, this.size, this.size);
+                } else if (this.shape === 1) {
+                    ctx.beginPath();
+                    ctx.arc(0, 0, this.size / 2, 0, Math.PI * 2);
+                    ctx.fill();
+                } else {
+                    ctx.beginPath();
+                    ctx.moveTo(0, -this.size / 2);
+                    ctx.lineTo(this.size / 2, this.size / 2);
+                    ctx.lineTo(-this.size / 2, this.size / 2);
+                    ctx.closePath();
+                    ctx.fill();
+                }
+                ctx.restore();
+            }
+        }
+
+        function initConfetti(count = 100) {
+            for (let i = 0; i < count; i++) {
+                confetti.push(new Confetti());
+            }
+        }
+
+        function animateConfetti() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            confetti.forEach(c => {
+                c.update();
+                c.draw();
+            });
+            animationId = requestAnimationFrame(animateConfetti);
+        }
+
+        initConfetti(80);
+        animateConfetti();
+
+        // Floating Emojis
+        const emojis = ['🎈', '🎉', '🎊', '🌟', '⭐', '💫', '🎁', '🎀', '💝', '🎂'];
+        const floatingContainer = document.getElementById('floatingEmojis');
+
+        for (let i = 0; i < 20; i++) {
+            const emoji = document.createElement('div');
+            emoji.className = 'floating-emoji';
+            emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+            emoji.style.left = Math.random() * 100 + '%';
+            emoji.style.top = Math.random() * 100 + '%';
+            emoji.style.animationDelay = Math.random() * 6 + 's';
+            emoji.style.fontSize = (Math.random() * 2 + 1) + 'rem';
+            floatingContainer.appendChild(emoji);
+        }
+
+        // Scroll Progress Bar
+        window.addEventListener('scroll', () => {
+            const scrollTop = document.documentElement.scrollTop;
+            const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = (scrollTop / scrollHeight) * 100;
+            document.getElementById('progressBar').style.width = progress + '%';
+        });
+
+        // Reveal on Scroll
+        function reveal() {
+            const reveals = document.querySelectorAll('.reveal');
+            reveals.forEach(element => {
+                const windowHeight = window.innerHeight;
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+
+                if (elementTop < windowHeight - elementVisible) {
+                    element.classList.add('active');
+                }
+            });
+        }
+        window.addEventListener('scroll', reveal);
+        reveal();
+
+        // Sparkle Effect on Click
+        document.addEventListener('click', (e) => {
+            const sparkleEmojis = ['✨', '⭐', '🌟', '💫', '🎇'];
+            for (let i = 0; i < 5; i++) {
+                const sparkle = document.createElement('div');
+                sparkle.className = 'sparkle';
+                sparkle.textContent = sparkleEmojis[Math.floor(Math.random() * sparkleEmojis.length)];
+                sparkle.style.left = (e.clientX + (Math.random() * 40 - 20)) + 'px';
+                sparkle.style.top = (e.clientY + (Math.random() * 40 - 20)) + 'px';
+                sparkle.style.fontSize = (Math.random() * 20 + 15) + 'px';
+                document.body.appendChild(sparkle);
+                setTimeout(() => sparkle.remove(), 600);
+            }
+        });
+
+        // Blow Candles
+        let candlesBlown = false;
+        function blowCandles() {
+            if (candlesBlown) return;
+            candlesBlown = true;
+            
+            const candles = document.querySelectorAll('.candle');
+            candles.forEach((candle, index) => {
+                setTimeout(() => {
+                    candle.textContent = '💨';
+                    candle.style.animation = 'none';
+                }, index * 200);
+            });
+
+            setTimeout(() => {
+                triggerMegaParty();
+                document.querySelector('.cake-text').textContent = '🎉 HAPPY BIRTHDAY SARTHAK! 🎉';
+                document.querySelector('.cake-text').style.fontSize = '2.5rem';
+                document.querySelector('.cake-text').style.color = 'var(--accent)';
+            }, 1000);
+        }
+
+        // Mega Party Mode
+        function triggerMegaParty() {
+            // Add more confetti
+            for (let i = 0; i < 100; i++) {
+                confetti.push(new Confetti());
+            }
+
+            // Screen shake
+            document.body.style.animation = 'shake 0.5s';
+            setTimeout(() => {
+                document.body.style.animation = '';
+            }, 500);
+
+            // Flash colors
+            const colors = ['#FF6B6B', '#4ECDC4', '#FFE66D', '#A855F7', '#EC4899'];
+            let flashCount = 0;
+            const flashInterval = setInterval(() => {
+                document.body.style.backgroundColor = colors[flashCount % colors.length];
+                flashCount++;
+                if (flashCount > 10) {
+                    clearInterval(flashInterval);
+                    document.body.style.backgroundColor = '';
+                }
+            }, 100);
+
+            // Burst emojis
+            const burstEmojis = ['🎉', '🎊', '🥳', '🎈', '🎁', '💥', '🔥', '⚡'];
+            for (let i = 0; i < 30; i++) {
+                setTimeout(() => {
+                    const burst = document.createElement('div');
+                    burst.textContent = burstEmojis[Math.floor(Math.random() * burstEmojis.length)];
+                    burst.style.position = 'fixed';
+                    burst.style.left = Math.random() * window.innerWidth + 'px';
+                    burst.style.top = Math.random() * window.innerHeight + 'px';
+                    burst.style.fontSize = '4rem';
+                    burst.style.zIndex = '10000';
+                    burst.style.pointerEvents = 'none';
+                    burst.style.animation = 'sparkleAnim 1s ease-out forwards';
+                    document.body.appendChild(burst);
+                    setTimeout(() => burst.remove(), 1000);
+                }, i * 50);
+            }
+        }
+
+        // Shake animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes shake {
+                0%, 100% { transform: translateX(0); }
+                10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); }
+                20%, 40%, 60%, 80% { transform: translateX(10px); }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Music System with better handling
+        let musicPlaying = false;
+        const bgMusic = document.getElementById('bgMusic');
+        const musicPrompt = document.getElementById('musicPrompt');
+        
+        function startMusic() {
+            bgMusic.play().then(() => {
+                musicPlaying = true;
+                document.querySelector('.music-toggle').textContent = '🎵';
+                if (musicPrompt) musicPrompt.style.display = 'none';
+            }).catch(err => {
+                console.log('Music autoplay blocked:', err);
+            });
+        }
+        
+        function toggleMusic() {
+            const btn = document.querySelector('.music-toggle');
+            if (musicPlaying) {
+                bgMusic.pause();
+                btn.textContent = '🔇';
+                musicPlaying = false;
+            } else {
+                bgMusic.play().then(() => {
+                    btn.textContent = '🎵';
+                    musicPlaying = true;
+                    if (musicPrompt) musicPrompt.style.display = 'none';
+                }).catch(err => console.log('Play failed:', err));
+            }
+        }
+        
+        // Try to autoplay on first user interaction
+        document.addEventListener('click', function autoplayOnce() {
+            if (!musicPlaying) {
+                startMusic();
+            }
+            document.removeEventListener('click', autoplayOnce);
+        }, { once: true });
+
+        // Easter Egg - Konami Code
+        let konamiCode = [];
+        const konamiSequence = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
+        document.addEventListener('keydown', (e) => {
+            konamiCode.push(e.keyCode);
+            if (konamiCode.length > 10) konamiCode.shift();
+            if (konamiCode.join(',') === konamiSequence.join(',')) {
+                document.body.style.animation = 'rainbow-bg 2s linear infinite';
+                const rainbowStyle = document.createElement('style');
+                rainbowStyle.textContent = `
+                    @keyframes rainbow-bg {
+                        0% { filter: hue-rotate(0deg); }
+                        100% { filter: hue-rotate(360deg); }
+                    }
+                `;
+                document.head.appendChild(rainbowStyle);
+                triggerMegaParty();
+                alert('🎉 SECRET UNLOCKED! 🎉\nSARTHAK IS THE BEST!');
+            }
+        });
+
+        // Auto Party on page load
+        setTimeout(() => {
+            triggerMegaParty();
+        }, 500);
+
+        console.log('%c🎂 HAPPY BIRTHDAY SARTHAK THE LEGEND! 🎂', 'font-size: 30px; color: #A855F7; font-weight: bold;');
+        console.log('%c👑 THE GOAT OF TEAM SKY 👑', 'font-size: 20px; color: gold;');
+        console.log('%cFrom Team SKY with ❤️ - Yash & Krushna', 'font-size: 16px; color: #EC4899;');
+    </script>
+</body>
+</html>
