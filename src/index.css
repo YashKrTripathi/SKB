@@ -7,6 +7,7 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -14,8 +15,26 @@ body {
   background: #1a1a2e;
   overflow-x: hidden;
   min-height: 100vh;
+  min-height: 100svh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 #root {
   width: 100%;
+  overflow-x: hidden;
+}
+
+/* Prevent horizontal scroll on mobile */
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Better touch targets */
+@media (hover: none) and (pointer: coarse) {
+  button, a, [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
 }

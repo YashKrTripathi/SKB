@@ -709,18 +709,128 @@ body {
 }
 
 /* ========== RESPONSIVE ========== */
+
+/* Disable custom cursor on touch devices */
+@media (hover: none) and (pointer: coarse) {
+  * {
+    cursor: auto !important;
+  }
+  
+  .custom-cursor,
+  .sparkle {
+    display: none !important;
+  }
+}
+
 @media (max-width: 768px) {
+  /* Restore default cursor on mobile */
+  * {
+    cursor: auto !important;
+  }
+  
+  .custom-cursor,
+  .sparkle {
+    display: none !important;
+  }
+
+  /* Hero Section */
+  .hero {
+    min-height: 100svh;
+    padding: 20px;
+  }
+  
   .hero-title {
     letter-spacing: 2px;
+    text-shadow: 2px 2px 0 var(--pink), 4px 4px 0 var(--purple);
+  }
+  
+  .hero-subtitle {
+    margin-top: 15px;
+  }
+  
+  .team-badge {
+    padding: 12px 25px;
+    font-size: 0.95rem;
+  }
+  
+  .scroll-indicator {
+    bottom: 20px;
+  }
+  
+  .scroll-indicator span {
+    font-size: 2rem;
+  }
+
+  /* Message Section */
+  .message-section {
+    padding: 80px 15px;
+    clip-path: none;
   }
   
   .message-card {
     padding: 30px 20px;
-    margin: 20px;
+    margin: 10px;
+    border-radius: 20px;
+  }
+  
+  .message-card p {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+  
+  .message-card .highlight {
+    font-size: 1.2rem;
+  }
+  
+  .message-card .signature {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+
+  /* Facts Section */
+  .facts-section {
+    padding: 80px 15px;
+    clip-path: none;
+  }
+  
+  .section-title {
+    margin-bottom: 30px;
+  }
+  
+  .facts-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 10px;
+  }
+  
+  .fact-card {
+    padding: 25px 20px;
+  }
+  
+  .fact-emoji {
+    font-size: 3rem;
+  }
+  
+  .fact-card h3 {
+    font-size: 1.2rem;
+  }
+  
+  .fact-card p {
+    font-size: 0.95rem;
+  }
+
+  /* Evolution/Timeline Section */
+  .evolution-section {
+    padding: 80px 15px;
+  }
+  
+  .timeline {
+    padding: 10px 0;
   }
   
   .timeline-line {
-    left: 30px;
+    left: 20px;
+    width: 4px;
   }
   
   .timeline-item,
@@ -728,24 +838,195 @@ body {
   .timeline-item.right {
     width: 100%;
     margin-left: 0;
-    padding-left: 80px;
-    padding-right: 20px;
+    padding-left: 60px;
+    padding-right: 10px;
     justify-content: flex-start;
+  }
+  
+  .timeline-content {
+    padding: 20px;
+    max-width: 100%;
+  }
+  
+  .timeline-icon {
+    width: 45px;
+    height: 45px;
+    font-size: 1.5rem;
   }
   
   .timeline-item.left .timeline-icon,
   .timeline-item.right .timeline-icon {
-    left: -10px;
+    left: -2px;
     right: auto;
+  }
+  
+  .timeline-year {
+    font-size: 1.3rem;
+  }
+  
+  .timeline-title {
+    font-size: 1.1rem;
+  }
+  
+  .timeline-desc {
+    font-size: 0.9rem;
+  }
+  
+  .legend-badge {
+    font-size: 0.8rem;
+    padding: 6px 15px;
+  }
+
+  /* Wishes Section */
+  .wishes-section {
+    padding: 80px 15px;
+    clip-path: none;
+  }
+  
+  .wishes-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .wish-card {
+    padding: 30px 20px;
+  }
+  
+  .quote-mark {
+    font-size: 4rem;
+  }
+  
+  .wish-message {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  .from-name {
+    font-size: 1.1rem;
+  }
+
+  /* Cake Section */
+  .cake-section {
+    min-height: 100svh;
+  }
+  
+  .candles {
+    gap: 10px;
+  }
+  
+  .candle {
+    font-size: 2rem;
+  }
+  
+  .cake-text {
+    font-size: 1.4rem;
+    padding: 0 20px;
+  }
+  
+  .cake-text.celebration {
+    font-size: 1.8rem;
+  }
+
+  /* Final Section */
+  .final-section {
+    padding: 50px 15px;
+    min-height: 100svh;
   }
   
   .team-members {
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
+    font-size: 1.1rem;
   }
   
   .member-separator {
     display: none;
+  }
+  
+  .legend-member {
+    font-size: 1.5rem;
+  }
+  
+  .legend-tagline {
+    font-size: 1.1rem;
+    padding: 0 20px;
+  }
+  
+  .party-button {
+    padding: 15px 35px;
+    font-size: 1.2rem;
+  }
+
+  /* Music Player */
+  .music-toggle {
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+  }
+  
+  .music-prompt {
+    bottom: 85px;
+    right: 15px;
+    padding: 12px 20px;
+    font-size: 0.9rem;
+  }
+  
+  .music-visualizer {
+    bottom: 80px;
+    right: 30px;
+  }
+  
+  .visualizer-bar {
+    width: 5px;
+  }
+
+  /* Party Overlay */
+  .party-text {
+    text-shadow: 2px 2px 0 var(--pink), 4px 4px 0 var(--purple);
+  }
+
+  /* Floating elements */
+  .legend-float {
+    font-size: 1rem;
+  }
+  
+  .final-decorations .decoration {
+    font-size: 1rem;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 380px) {
+  .hero-title {
+    letter-spacing: 1px;
+  }
+  
+  .team-badge {
+    padding: 10px 20px;
+    font-size: 0.85rem;
+  }
+  
+  .message-card {
+    padding: 25px 15px;
+  }
+  
+  .fact-card {
+    padding: 20px 15px;
+  }
+  
+  .timeline-content {
+    padding: 15px;
+  }
+  
+  .wish-card {
+    padding: 25px 15px;
+  }
+  
+  .party-button {
+    padding: 12px 30px;
+    font-size: 1rem;
   }
 }
 
